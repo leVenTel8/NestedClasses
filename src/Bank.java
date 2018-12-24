@@ -8,6 +8,17 @@ public class Bank {
         private int money;
     }
 
+    public static class Banker{
+        public Bank createBank(){
+            return new Bank();
+        }
+    }
+
+    private Bank(){  //данный конструктор означает,
+
+    }               //нельзя будет создать через new
+                    //в любом другом месте программы, кроме самого этого класса
+
     HashMap<String, Account> accounts = new HashMap<String, Account>();
 
     public void openAccount(String id, String name){
